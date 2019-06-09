@@ -21,14 +21,8 @@ function pre(context) {
   const $ = jquery(document.defaultView);
 
   /* workaround until cache purge is properly setup */
-  let queryString = '';
-  let separator = '?';
-  Object.keys(context.request.params).forEach((key) => {
-    queryString += `${separator}${key}=${context.request.params[key]}`;
-    separator = '&';
-  });
   // eslint-disable-next-line no-param-reassign
-  context.request.queryString = queryString;
+  context.request.queryString = context.request.url.substring(context.request.path.length);
   /* end of workaround */
 
   /* workaround until sections in document are fixed via PR on pipeline */

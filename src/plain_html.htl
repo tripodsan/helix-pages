@@ -1,1 +1,2 @@
+<!-- Received request: ${request.url @ context = 'unsafe'} -->
 <div class="plain">${content.document.body.innerHTML @ context = 'unsafe'}</div>

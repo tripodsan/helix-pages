@@ -23,11 +23,11 @@
 
   </head>
 <body>
-  <!--  header -->
+  <!--  header: "/header.plain.html${request.queryString @ context='unsafe'}" -->
   <header><esi:include src="/header.plain.html${request.queryString @ context='unsafe'}" onerror="continue" /></header>
   <!--  content -->
   ${content.document.body.innerHTML @ context = 'unsafe'}
-  <!--  footer -->
+  <!--  footer: "/footer.plain.html${request.queryString @ context='unsafe'}" -->
   <footer><esi:include src="/footer.plain.html${request.queryString @ context='unsafe'}" onerror="continue"/></footer>
 </body>
 </html>

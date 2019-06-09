@@ -14,3 +14,5 @@ strains:
     content: https://github.com/adobe/helix-pages.git#master
     static: https://github.com/adobe/helix-pages.git/htdocs#master
     package: acapt/2de827a17d13c91b893e2af9a9683027f91c48af
+    params:
+      - "flush*"
