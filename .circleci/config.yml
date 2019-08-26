@@ -74,7 +74,7 @@ jobs:
 
         - run:
             name: Deploy to Adobe I/O Runtime
-            command: npx hlx deploy --add default | cat
+            command: npx hlx deploy --add test_$CIRCLE_BUILD_NUM | cat
 
         - run:
             name: Compute TEST_DOMAIN and TEST_SERVICE
