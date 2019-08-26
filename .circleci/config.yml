@@ -7,6 +7,14 @@ executors:
       - image: circleci/node:8-jessie
     environment:
       NPM_CONFIG_PREFIX: ~/.npm-global
+  cypress:
+    docker:
+      - image: cypress/base:8
+    environment:
+        ## this enables colors in the output
+        TERM: xterm
+        NPM_CONFIG_PREFIX: ~/.npm-global
+  
 
 commands:
   setup:
@@ -16,7 +24,7 @@ commands:
           keys:
             - v1-dependencies-{{ arch }}-{{ checksum "package-lock.json" }}
       - run:
-          name: install npm 6.4.1
+          name: Install npm 6.4.1
           command: sudo npm -g install npm@6.4.1
       - run:
           name: Installing Dependencies
@@ -49,7 +57,7 @@ jobs:
 
         - run:
             name: Run (Cypress) tests
-            command: npm run test
+            command: npm run test:record
 
 
         # - run:
