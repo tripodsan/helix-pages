@@ -43,9 +43,14 @@ jobs:
         #     name: Installing Dependencies
         #     command: test -f package.json && npm install || echo "package.json does not exist"
 
-        # - run:
-        #     name: Installing Helix CLI
-        #     command: npm install @adobe/helix-cli --save=false
+        - run:
+            name: Installing Helix CLI
+            command: npm install @adobe/helix-cli --save=false
+
+        - run:
+            name: Run (Cypress) tests
+            command: npm run test
+
 
         # - run:
         #     name: Reset package-lock.json
