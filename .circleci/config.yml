@@ -85,6 +85,7 @@ jobs:
               name="TEST_SERVICE_$modulo"
               TEST_SERVICE=${!name}
               echo "TEST_DOMAIN has been found - $TEST_DOMAIN"
+              echo "TEST_SERVICE has been found - $TEST_SERVICE"
 
         - run:
             name: Publish to Fastly
