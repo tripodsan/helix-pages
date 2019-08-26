@@ -65,10 +65,6 @@ jobs:
             command: npm install @adobe/helix-cli --save=false
 
         - run:
-            name: Run (Cypress) tests
-            command: env CYPRESS_baseUrl="http://localhost:3000" npm run test:record
-
-        - run:
             name: Build Templates
             command: npx hlx build
 
@@ -78,7 +74,7 @@ jobs:
 
         - run:
             name: Deploy to Adobe I/O Runtime
-            command: npx hlx deploy | cat
+            command: npx hlx deploy --add default | cat
 
         - run:
             name: Compute TEST_DOMAIN and TEST_SERVICE
