@@ -39,7 +39,7 @@ commands:
 
 jobs:
   build:
-    executor: node8
+    executor: cypress
     steps:
         - setup
 
