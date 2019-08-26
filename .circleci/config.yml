@@ -84,7 +84,7 @@ jobs:
             name: Compute TEST_DOMAIN and TEST_SERVICE
             command: |
               echo "CIRCLE_BUILD_NUM - $CIRCLE_BUILD_NUM"
-              modulo=$CIRCLE_BUILD_NUM%3+1
+              modulo=$(expr $CIRCLE_BUILD_NUM % 3 + 1)
               echo "Modulo - $modulo";
 
         # - run:
