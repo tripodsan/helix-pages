@@ -86,10 +86,11 @@ jobs:
               echo "CIRCLE_BUILD_NUM - $CIRCLE_BUILD_NUM"
               modulo=$(expr $CIRCLE_BUILD_NUM % 3 + 1)
               echo "Modulo - $modulo"
-              name="TEST_DOMAIN_$module"
+              name="TEST_DOMAIN_$modulo"
               TEST_DOMAIN=${!name}
-              name="TEST_SERVICE_$module"
+              name="TEST_SERVICE_$modulo"
               TEST_SERVICE=${!name}
+              echo "TEST_DOMAIN_1 - $TEST_DOMAIN_1"
               echo "TEST_DOMAIN - $TEST_DOMAIN"
               echo "TEST_SERVICE - $TEST_SERVICE"
 
