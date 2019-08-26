@@ -57,7 +57,7 @@ jobs:
 
         - run:
             name: Run (Cypress) tests
-            command: npm run test:record
+            command: env CYPRESS_baseUrl="http://localhost:3000" npm run test:record
 
 
         # - run:

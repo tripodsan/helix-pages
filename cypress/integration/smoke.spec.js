@@ -16,7 +16,7 @@
 
 context('Navigation', () => {
   it('home', () => {
-    cy.visit('http://localhost:3000');
+    cy.visit('/');
     cy.title().should('include', 'Helix Pages');
   });
 });
