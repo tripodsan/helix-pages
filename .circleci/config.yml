@@ -97,11 +97,11 @@ jobs:
 
         - run:
             name: Publish to Fastly
-            command: npx hlx publish --custom-vcl='vcl/extensions.vcl' --fastly-namespace $TEST_SERVICE | cat
+            command: npx hlx publish --custom-vcl='vcl/extensions.vcl' --fastly-serviceid $TEST_SERVICE | cat
 
         - run:
             name: Run (Cypress) tests
-            command: env CYPRESS_baseUrl=https://www.$TEST_DOMAIN" npm run test:record
+            command: env CYPRESS_baseUrl="https://www.$TEST_DOMAIN" npm run test:record
 
   publish:
     executor: node8
