@@ -101,7 +101,7 @@ jobs:
 
         - run:
             name: Run (Cypress) tests
-            command: env CYPRESS_baseUrl="https://www.$TEST_DOMAIN" npm run test:record
+            command: env CYPRESS_baseUrl="https://www.$TEST_DOMAIN" npm run cy:record
 
   publish:
     executor: node8
