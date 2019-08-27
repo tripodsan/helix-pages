@@ -89,7 +89,7 @@ jobs:
 
         - run:
             name: Publish to Fastly
-            command: env HLX_FASTLY_NAMESPACE=$TEST_SERVICE npx hlx publish --custom-vcl='vcl/extensions.vcl' | cat
+            command: npx hlx publish --custom-vcl='vcl/extensions.vcl' --fastly-namespace $TEST_SERVICE | cat
 
         - run:
             name: Run (Cypress) tests
