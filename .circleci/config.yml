@@ -81,9 +81,13 @@ jobs:
             command: |
               modulo=$(expr $CIRCLE_BUILD_NUM % 3 + 1)
               name="TEST_DOMAIN_$modulo"
-              export TEST_DOMAIN=${!name}
+              TEST_DOMAIN=${!name}
               name="TEST_SERVICE_$modulo"
-              export TEST_SERVICE=${!name}
+              TEST_SERVICE=${!name}
+              # "pass" the variable to the next steps...
+              echo "export TEST_DOMAIN=$TEST_DOMAIN" >> $BASH_ENV
+              echo "export TEST_SERVICE=$TEST_SERVICE" >> $BASH_ENV
+              # debug logs
               echo "TEST_DOMAIN has been found - $TEST_DOMAIN"
               echo "TEST_SERVICE has been found - $TEST_SERVICE"
 
