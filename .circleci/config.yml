@@ -81,11 +81,15 @@ jobs:
             command: |
               modulo=$(expr $CIRCLE_BUILD_NUM % 3 + 1)
               name="TEST_DOMAIN_$modulo"
-              TEST_DOMAIN=${!name}
+              export TEST_DOMAIN=${!name}
               name="TEST_SERVICE_$modulo"
-              TEST_SERVICE=${!name}
+              export TEST_SERVICE=${!name}
               echo "TEST_DOMAIN has been found - $TEST_DOMAIN"
               echo "TEST_SERVICE has been found - $TEST_SERVICE"
+
+        - run:
+            name: Echo
+            command: echo "TEST_SERVICE - $TEST_SERVICE"
 
         - run:
             name: Publish to Fastly
