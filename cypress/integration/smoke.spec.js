@@ -14,9 +14,12 @@
 
 /* global context, it, cy */
 
-context('Navigation', () => {
-  it('home', () => {
-    cy.visit('/');
+context('Helix Pages content', () => {
+  it('index.md', () => {
+    cy.visit('/index.html');
+    cy.waitForResources('/style.css', '/scrani.js');
     cy.title().should('include', 'Helix Pages');
+    cy.get('h1').should('have.text', 'Helix Pages');
+    cy.get('body').should('have.css', 'background-color', 'rgb(255, 255, 255)');
   });
 });
