@@ -14,13 +14,23 @@
 
 /* global context, it, cy, expect */
 
-context('Helix Pages content', () => {
-  it('index.md', () => {
+context('Helix Pages own content', () => {
+  it('index.md content', () => {
     cy.visit('/index.html');
-    cy.waitForResources('/style.css', '/scrani.js');
+
+    // check various content pieces
     cy.title().should('include', 'Helix Pages');
     cy.get('h1').should('have.text', 'Helix Pages');
     cy.get('p').first().then(p => expect(p.text()).to.equal('Welcome to Helix Pages!'));
+  });
+
+  it('static resources', () => {
+    cy.visit('/index.html');
+
+    // static resources are loaded
+    cy.waitForResources('/style.css', '/scrani.js');
+
+    // style in css is applied
     cy.get('body').should('have.css', 'background-color', 'rgb(255, 255, 255)');
   });
 });
