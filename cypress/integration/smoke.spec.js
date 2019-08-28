@@ -12,7 +12,7 @@
 
 // <reference types="Cypress" />
 
-/* global context, it, cy */
+/* global context, it, cy, expect */
 
 context('Helix Pages content', () => {
   it('index.md', () => {
@@ -20,6 +20,7 @@ context('Helix Pages content', () => {
     cy.waitForResources('/style.css', '/scrani.js');
     cy.title().should('include', 'Helix Pages');
     cy.get('h1').should('have.text', 'Helix Pages');
+    cy.get('p').first().then(p => expect(p.text()).to.equal('Welcome to Helix Pages!'));
     cy.get('body').should('have.css', 'background-color', 'rgb(255, 255, 255)');
   });
 });
