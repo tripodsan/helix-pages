@@ -8,9 +8,7 @@
     "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect",
     "cy:run": "cypress run",
-    "cy:record": "cypress run --record --key $CYPRESS_RECORD_KEY",
-    "test": "start-server-and-test \"hlx up\" http://localhost:3000 cy:run",
-    "test:record": "start-server-and-test \"hlx up\" http://localhost:3000 cy:record"
+    "cy:record": "cypress run --record --key $CYPRESS_RECORD_KEY"
   },
   "repository": {
     "type": "git",

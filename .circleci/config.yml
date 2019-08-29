@@ -38,23 +38,6 @@ commands:
           command: git config --global user.email "circleci@project-helix.page" && git config --global user.name "CircleCi Build"
 
 jobs:
-  local:
-    executor: cypress
-    steps:
-        - setup
-
-        - run:
-            name: Lint
-            command: npm run lint
-
-        - run:
-            name: Installing Helix CLI
-            command: npm install @adobe/helix-cli --save=false
-
-        - run:
-            name: Run (Cypress) tests
-            command: env CYPRESS_baseUrl="http://localhost:3000" npm run test:record
-
   remote:
     executor: cypress
     steps:
@@ -101,7 +84,7 @@ jobs:
 
         - run:
             name: Run (Cypress) tests
-            command: env CYPRESS_baseUrl="https://www.$TEST_DOMAIN" npm run cy:record
+            command: env CYPRESS_TEST_DOMAIN="$TEST_DOMAIN" npm run cy:record
 
   publish:
     executor: node8
