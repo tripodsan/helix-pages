@@ -12,25 +12,29 @@
 
 // <reference types="Cypress" />
 
+// TODO move to helix-example-basic repo
+
+// eslint-disable-next-line no-unused-vars
 /* global context, it, cy, expect, Cypress */
 
-context('Helix Pages - basic example', () => {
-  it('index.md content', () => {
-    cy.visit(`https://helix-example-basic-adobe.${Cypress.env('TEST_DOMAIN')}/index.html`);
+// context('Helix Pages - basic example', () => {
+//   it('index.md content', () => {
+//     cy.visit(`https://helix-example-basic-adobe.${Cypress.env('TEST_DOMAIN')}/index.html`);
 
-    // check various content pieces
-    cy.title().should('include', 'Helix: Basic Example');
-    cy.get('main h1').should('have.text', 'Helix: Basic Example');
-    cy.get('main p').first().then(p => expect(p.text()).to.equal('It works, your Helix website is up and running!'));
-  });
+//     // check various content pieces
+//     cy.title().should('include', 'Helix: Basic Example');
+//     cy.get('main h1').should('have.text', 'Helix: Basic Example');
+//     cy.get('main p').first()
+//        .then(p => expect(p.text()).to.equal('It works, your Helix website is up and running!'));
+//   });
 
-  it('static resources', () => {
-    cy.visit(`https://helix-example-basic-adobe.${Cypress.env('TEST_DOMAIN')}/index.html`);
+//   it('static resources', () => {
+//     cy.visit(`https://helix-example-basic-adobe.${Cypress.env('TEST_DOMAIN')}/index.html`);
 
-    // static resources are loaded
-    cy.waitForResources('/style.css', '/scrani.js');
+//     // static resources are loaded
+//     cy.waitForResources('/style.css', '/scrani.js');
 
-    // style in css is applied
-    cy.get('body').should('have.css', 'background-color', 'rgb(173, 216, 230)');
-  });
-});
+//     // style in css is applied
+//     cy.get('body').should('have.css', 'background-color', 'rgb(173, 216, 230)');
+//   });
+// });

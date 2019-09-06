@@ -8,7 +8,8 @@
     "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect",
     "cy:run": "cypress run",
-    "cy:record": "cypress run --record --key $CYPRESS_RECORD_KEY"
+    "cy:record": "cypress run --record --key $CYPRESS_RECORD_KEY",
+    "test:helixPagesIT": "cypress run --record --key $CYPRESS_RECORD_KEY"
   },
   "repository": {
     "type": "git",
