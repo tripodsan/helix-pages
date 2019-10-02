@@ -13,6 +13,7 @@
 // <reference types="Cypress" />
 
 /* global context, it, cy, expect, Cypress */
+const getenv = require('getenv');
 
 context('Helix Pages - own content', () => {
   it('index.md content', () => {
