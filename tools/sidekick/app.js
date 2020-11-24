@@ -182,7 +182,7 @@
             ['repo', config.repo],
             ['ref', config.ref || 'main'],
             ['path', '/'],
-            ['edit', location.href],
+            ['edit', location.href.split('#')[0].split('?')[0]],
           ]).toString();
           window.open(url, `hlx-sk-edit-${config.repo}--${config.owner}`);
         },
