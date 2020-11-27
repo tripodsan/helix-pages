@@ -70,6 +70,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  min-height: 39px;
   box-sizing: border-box;
   padding: 0 36px 10px 42px;
   font-family: var(--hlx-sk-font-family);
@@ -82,14 +83,14 @@
   line-height: 2;
 }
 
-.hlx-sk .close {
+.hlx-sk > .close {
   position: absolute;
   margin-top: 10px;
   border-color: transparent;
   right: 0;
 }
 
-.hlx-sk .close::before {
+.hlx-sk > .close::before {
   display: none;
 }
 

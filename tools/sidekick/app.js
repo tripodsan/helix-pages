@@ -309,6 +309,17 @@
       });
       this.location = getLocation();
       this.loadCSS();
+      // close button
+      appendTag(this.root, {
+        tag: 'button',
+        text: '✕',
+        attrs: {
+          class: 'close',
+        },
+        lstnrs: {
+          click: () => this.toggle(),
+        },
+      });
       // default plugins
       addEditPlugin(this);
       addPreviewPlugin(this);
@@ -326,17 +337,6 @@
           },
         });
       }
-      // close button
-      appendTag(this.root, {
-        tag: 'button',
-        text: '✕',
-        attrs: {
-          class: 'close',
-        },
-        lstnrs: {
-          click: () => this.toggle(),
-        },
-      });
     }
 
     /**
@@ -490,9 +490,16 @@
             class: 'hlx-sk-overlay',
           },
         });
+        $spinnerWrap.addEventListener('click', () => {
+          this.hideModal();
+        });
         this._modal = appendTag($spinnerWrap, { tag: 'div' });
       } else {
         this._modal.parentNode.classList.remove('hlx-sk-hidden');
+        if (this._modal_timeout) {
+          window.clearTimeout(this._modal_timeout);
+          this._modal_timeout = 0;
+        }
       }
       if (msg) {
         if (Array.isArray(msg)) {
@@ -507,10 +514,10 @@
       }
       if (!sticky) {
         const sk = this;
-        window.setTimeout(() => {
+        this._modal_timeout = window.setTimeout(() => {
           sk.hideModal();
         }, 3000);
-      } else {
+      } else if (level === 2) {
         this._modal.classList.add('wait');
       }
       return this;
@@ -526,6 +533,7 @@
         this._modal.className = '';
         this._modal.parentNode.classList.add('hlx-sk-hidden');
       }
+      this._modal_timeout = 0;
       return this;
     }
 
