@@ -15,14 +15,13 @@ strains:
     static: https://github.com/tripodsan/helix-pages.git/htdocs#master
     package: tripod/3e0670464bc07f36395ed2eb812fe20e4629f54d
 
-  - name: breaking-december
+  - name: preprod
     condition:
-      url.hostname: breaking-december
-    code: https://github.com/tripodsan/helix-pages.git#breaking-december
-    content: https://github.com/tripodsan/helix-pages.git#breaking-december
-    static: https://github.com/tripodsan/helix-pages.git/htdocs#breaking-december
-    package: tripod/238dca652557e8200f0268d6e2f33c7bb937251a
-    version-lock:
-      word2md: 2.1.11-testing
-      dispatch: 4.3.6-testing
-      content-proxy: 2.2.6-testing
+      url.hostname: preprod
+    code: https://github.com/tripodsan/helix-pages.git#preprod
+    content: https://github.com/tripodsan/helix-pages.git#preprod
+    static: https://github.com/tripodsan/helix-pages.git/htdocs#preprod
+#    version-lock:
+#      word2md: 2.1.11-testing
+#      dispatch: 4.3.6-testing
+#      content-proxy: 2.2.6-testing
