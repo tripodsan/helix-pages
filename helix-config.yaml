@@ -21,9 +21,8 @@ strains:
     code: https://github.com/tripodsan/helix-pages.git#preprod
     content: https://github.com/tripodsan/helix-pages.git#preprod
     static: https://github.com/tripodsan/helix-pages.git/htdocs#preprod
-    package: tripod/f5b70f899a7de822a3e21355eba5be7f3c678971
-
-#    version-lock:
+    package: tripod/d427f3dc529c81370bd8fe9529328f4d2a5abd9a
+    version-lock:
+      content-proxy: ci1219
 #      word2md: 2.1.11-testing
 #      dispatch: 4.3.6-testing
-#      content-proxy: 2.2.6-testing
