@@ -29,6 +29,6 @@
   <main>${content.document.body}</main>
   <!--  footer -->
   <footer><esi:include src="/footer.plain.html"  onerror="continue"/></footer>
-  <div>tripod - testing version - master</div>
+  <div>tripod - testing version - january</div>
 </body>
 </html>
